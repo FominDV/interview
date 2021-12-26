@@ -15,7 +15,12 @@ public class Counter {
     }
 
     public long getCounter() {
-        return counter;
+        try {
+            lock.lock();
+            return counter;
+        } finally {
+            lock.unlock();
+        }
     }
 
 }
