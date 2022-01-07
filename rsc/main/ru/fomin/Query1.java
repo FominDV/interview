@@ -1,6 +1,5 @@
 package ru.fomin;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,8 +9,7 @@ import java.sql.Statement;
          «время начала», «длительность», «фильм 2», «время начала», «длительность»;*/
 public class Query1 {
 
-    public static void doIt(Connection connection) throws SQLException {
-        Statement statement = connection.createStatement();
+    public static void doIt(Statement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery("select f.\"name\" as \"фильм1\", \n" +
                 "    s.\"date\" as \"время начала\",  \n" +
                 "    f.time_film as \"длительность\",  \n" +
@@ -19,7 +17,7 @@ public class Query1 {
                 "    t.start_time as \"время начала\",  \n" +
                 "    t.time_film as \"длительность\"  \n" +
                 "from films f  \n" +
-                " left join sessions s on s.film_id = f.id \n" +
+                " inner join sessions s on s.film_id = f.id \n" +
                 " cross join (select  \n" +
                 "     f.id, \n" +
                 "     f.time_film, \n" +
@@ -27,7 +25,7 @@ public class Query1 {
                 "     s.\"date\" as start_time,  \n" +
                 "     (s.\"date\" + f.time_film * interval '1 minute') as end_time  \n" +
                 "    from films f  \n" +
-                "     left join sessions s on s.film_id = f.id) as t \n" +
+                "     inner join sessions s on s.film_id = f.id) as t \n" +
                 "where f.id <> t.id  \n" +
                 "   and s.\"date\" > t.start_time  \n" +
                 "   and s.\"date\" < t.end_time \n" +

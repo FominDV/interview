@@ -81,8 +81,11 @@ public class App {
         } catch (Exception exception) {
             connection.rollback();
         }
-
-        Query1.doIt(connection);
+        Statement statement = connection.createStatement();
+        Query1.doIt(statement);
+        System.out.println();
+        Query2.doIt(statement);
+        System.out.println();
     }
 
 }
