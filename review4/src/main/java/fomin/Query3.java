@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/*список фильмов, для каждого — с указанием общего числа посетителей за все время,
+ среднего числа зрителей за сеанс и общей суммы сборов по каждому фильму (отсортировать по убыванию прибыли).
+ Внизу таблицы должна быть строчка «итого», содержащая данные по всем фильмам сразу;*/
 public class Query3 {
 
     public static void doIt(Statement statement) throws SQLException {

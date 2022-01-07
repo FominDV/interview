@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/*число посетителей и кассовые сборы,
+ сгруппированные по времени начала фильма: с 9 до 15, с 15 до 18, с 18 до 21, с 21 до 00:00
+  (сколько посетителей пришло с 9 до 15 часов и т.д.).*/
 public class Query4 {
 
     public static void doIt(Statement statement) throws SQLException {

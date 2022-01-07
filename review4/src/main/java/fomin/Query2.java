@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/*перерывы 30 минут и более между фильмами — выводить по уменьшению длительности перерыва.
+ Колонки «фильм 1», «время начала», «длительность», «время начала второго фильма», «длительность перерыва»;*/
 public class Query2 {
 
     public static void doIt(Statement statement) throws SQLException {
