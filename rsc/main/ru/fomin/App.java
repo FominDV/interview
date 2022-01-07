@@ -43,13 +43,13 @@ public class App {
 //            preparedStatement.addBatch();
 //            preparedStatement.executeBatch();
 //
-//            preparedStatement = connection.prepareStatement("Insert into sessions (date, film_id) values (?,?)");
+  //       PreparedStatement   preparedStatement = connection.prepareStatement("Insert into sessions (date, film_id) values (?,?)");
 //            preparedStatement.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
 //            preparedStatement.setLong(2, 1);
 //            preparedStatement.addBatch();
-//            preparedStatement.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now().minusMinutes(30)));
-//            preparedStatement.setLong(2, 2);
-//            preparedStatement.addBatch();
+    //        preparedStatement.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now().minusMinutes(65)));
+    //        preparedStatement.setLong(2, 2);
+     //       preparedStatement.addBatch();
 //            preparedStatement.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now().minusMinutes(67)));
 //            preparedStatement.setLong(2, 3);
 //            preparedStatement.addBatch();
@@ -85,6 +85,8 @@ public class App {
         Query1.doIt(statement);
         System.out.println();
         Query2.doIt(statement);
+        System.out.println();
+        Query3.doIt(statement);
         System.out.println();
     }
 
