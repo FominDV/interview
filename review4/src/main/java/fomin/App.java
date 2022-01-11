@@ -89,6 +89,9 @@ public class App {
         Query3.doIt(statement);
         System.out.println();
         Query4.doIt(statement);
+
+        statement.close();
+        connection.close();
     }
 
 }
