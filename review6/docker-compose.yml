@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  web:
+    image: tomcat
+    volumes:
+      - ./target/review6.war
+    ports:
+      - '8081:8080'
