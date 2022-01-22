@@ -15,6 +15,7 @@
         <td>NAME</td>
         <td>AGE</td>
         <td>DELETE</td>
+        <td>CHANGE</td>
     </tr>
     </thead>
     <tbody>
@@ -28,10 +29,12 @@
                     <button type="submit" class="btn btn-danger">delete</button>
                 </form>
             </td>
+            <td><a class="btn btn-warning" href="students/update/${student.id}">edit</a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+
 <div>
     <h1>Create new student</h1>
     <form action="students" method="post">
